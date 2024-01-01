@@ -10,11 +10,17 @@ public class Activity {
 	private double cost;
 	private int capacity;
 
-	// Each activity has a linked destination, which gets initialized at the time of
-	// destination instantiation
+	/*
+	 * Each activity has an associated destination, which is initialized at the time
+	 * of destination instantiation.
+	 */
 	private Destination destination;
 
-	// Both the below members are declared static as they are on the class level
+	/*
+	 * Both the below members and their associated methods are declared static so
+	 * they can store all the activities associated with all objects of Activity
+	 * class.
+	 */
 	static Set<Activity> activities = new HashSet<Activity>();
 	static Set<String> activityNames = new HashSet<String>();
 
@@ -109,7 +115,7 @@ public class Activity {
 
 	public static void addActivity(Activity activity) {
 
-		// Logic to ensure duplicate Activities are not added
+		// Logic to ensure duplicate activities aren't added to the list
 		if (!activityNames.contains(activity.getName())) {
 			activityNames.add(activity.getName());
 			activities.add(activity);
