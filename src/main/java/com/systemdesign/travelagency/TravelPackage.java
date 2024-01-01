@@ -59,6 +59,11 @@ public class TravelPackage {
 				+ ", passengers=" + passengers + "]";
 	}
 
+	/*
+	 * 1. Print itinerary of the travel package including: a. travel package name,
+	 * b. destinations and details of the activities available at each destination,
+	 * like name, cost, capacity and description.
+	 */
 	public void Itinerary() {
 
 		System.out.println("Travel Package name is " + name);
@@ -83,6 +88,11 @@ public class TravelPackage {
 
 	}
 
+	/*
+	 * 2. Print the passenger list of the travel package including: a. package name,
+	 * b. passenger capacity, c. number of passengers currently enrolled and d. name
+	 * and number of each passenger
+	 */
 	public void passengerList() {
 
 		System.out.println("Travel Package name is " + name + ", passenger capacity is " + passengerCapacity
@@ -97,6 +107,12 @@ public class TravelPackage {
 
 	}
 
+	/*
+	 * 3. Print the details of an individual passenger including their 1. name, 2.
+	 * passenger number, 3. balance (if applicable), 4. list of each activity they
+	 * have signed up for, including the destination the at which the activity is
+	 * taking place and the price the passenger paid for the activity.
+	 */
 	public void detailsOfPassenger(Passenger passenger) {
 
 		System.out.println("Passenger name is " + passenger.getName() + " and the passenger number is "

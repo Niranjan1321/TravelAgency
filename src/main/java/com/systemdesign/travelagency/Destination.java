@@ -9,11 +9,14 @@ public class Destination {
 	private List<Activity> activities;
 
 	/*
-	 * As per the specification of the system design, each destination comes with a
-	 * name and a list of activities associates with it, hence I assume we cannot
-	 * create a destination without activities.
+	 * As per the specification of the software design, each destination comes with
+	 * a name and a list of activities associated with it, hence the assumption we
+	 * cannot create an instance of Destination without activities.
 	 */
-	// Implicitly setting the destination of the activities.
+	/*
+	 * Implicitly setting the destination of all the activities passed to the
+	 * destination instantiation.
+	 */
 	public Destination(String name, List<Activity> activities) {
 		super();
 		this.name = name;
@@ -42,7 +45,7 @@ public class Destination {
 
 	/*
 	 * An explicit method to add an activity to the existing activities of a
-	 * Destination and setting the destination of the activity.
+	 * destination and setting the destination of the added activity.
 	 */
 	public void addActivityToTheDestination(Activity activity) {
 

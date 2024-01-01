@@ -12,7 +12,8 @@ public class Activity {
 
 	/*
 	 * Each activity has an associated destination, which is initialized at the time
-	 * of destination instantiation.
+	 * of Destination instantiation or can be initialized by the method
+	 * addActivityToTheDestination of Destination class.
 	 */
 	private Destination destination;
 
@@ -24,10 +25,15 @@ public class Activity {
 	static Set<Activity> activities = new HashSet<Activity>();
 	static Set<String> activityNames = new HashSet<String>();
 
+	// To check if the activity still have spaces left
 	boolean isAvailable() {
 		return capacity > 0;
 	}
 
+	/*
+	 * Sign up the passenger to the activity provided there are still spaces left in
+	 * the activity and the passenger has sufficient balance left with him.
+	 */
 	public void signUpPassenger(Passenger passenger) {
 
 		if (isAvailable()) {
@@ -38,6 +44,7 @@ public class Activity {
 		}
 	}
 
+	// Returns the discounted cost as per type of the passenger
 	public double getDiscountedCost(Passenger passenger) {
 
 		if (passenger instanceof GoldPassenger) {
@@ -47,6 +54,10 @@ public class Activity {
 		return cost;
 	}
 
+	/*
+	 * Print the details of all the activities that still have spaces available,
+	 * including how many spaces are available.
+	 */
 	public static void activityDetails() {
 
 		System.out.println("Activities that have spaces available are, ");
@@ -65,6 +76,7 @@ public class Activity {
 
 	}
 
+	// Every time Activity is instantiated, the instance is added to the list
 	public Activity(String name, String description, double cost, int capacity) {
 		this.name = name;
 		this.description = description;
@@ -113,9 +125,12 @@ public class Activity {
 		this.destination = destination;
 	}
 
+	/*
+	 * Instance of Activity is added to the list provided it's not a duplicate(Has
+	 * the same name as that of an existing activity).
+	 */
 	public static void addActivity(Activity activity) {
 
-		// Logic to ensure duplicate activities aren't added to the list
 		if (!activityNames.contains(activity.getName())) {
 			activityNames.add(activity.getName());
 			activities.add(activity);
@@ -126,6 +141,7 @@ public class Activity {
 		return activities;
 	}
 
+	/* A new list of activities replaces the existing list of activities */
 	public static void setActivities(Set<Activity> newActivities) {
 
 		activities.clear();

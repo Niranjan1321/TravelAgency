@@ -41,6 +41,11 @@ public class Passenger {
 		this.bookedActivities = bookedActivities;
 	}
 
+	/*
+	 * Add an activity to the list of bookedActivities associated with the
+	 * passenger, provided he has sufficient balance left to match the cost of the
+	 * activity after any discount.
+	 */
 	public void addActivity(Activity activity) {
 		bookedActivities.add(activity);
 	}
@@ -75,6 +80,11 @@ class StandardPassenger extends Passenger {
 		this.balance = balance;
 	}
 
+	/*
+	 * Add an activity to the list of bookedActivities associated with the
+	 * passenger, provided he has sufficient balance left to match the cost of the
+	 * activity after any discount.
+	 */
 	@Override
 	public void addActivity(Activity activity) {
 		double cost = activity.getDiscountedCost(this);
@@ -110,6 +120,11 @@ class GoldPassenger extends Passenger {
 		this.balance = balance;
 	}
 
+	/*
+	 * Add an activity to the list of bookedActivities associated with the
+	 * passenger, provided he has sufficient balance left to match the cost of the
+	 * activity after any discount.
+	 */
 	@Override
 	public void addActivity(Activity activity) {
 		double cost = activity.getDiscountedCost(this);
@@ -134,6 +149,7 @@ class PremiumPassenger extends Passenger {
 		super(name, passengerNumber);
 	}
 
+	// Add an activity to the list of bookedActivities of the passenger.
 	@Override
 	public void addActivity(Activity activity) {
 

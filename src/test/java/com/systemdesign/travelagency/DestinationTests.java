@@ -9,7 +9,7 @@ import org.junit.Test;
 public class DestinationTests {
 
 	private Destination destination;
-	private Destination destination2; 
+	private Destination destination2;
 	private Activity activity1;
 	private Activity activity2;
 	private Activity activity3;
@@ -62,11 +62,12 @@ public class DestinationTests {
 
 	@Test
 	public void addActivityToTheExistingActivitiesOfDestination() {
-		
-		Destination destination3 = new Destination("Destination2", List.of(new Activity("Sample Activity", "Sample Description", 100, 100)));
-		
+
+		Destination destination3 = new Destination("Destination2",
+				List.of(new Activity("Sample Activity", "Sample Description", 100, 100)));
+
 		Assert.assertEquals(1, destination3.getActivities().size());
-		
+
 		activity5 = new Activity("Activity 5", "Description 5", 20.0, 4);
 
 		destination3.addActivityToTheDestination(activity5);
